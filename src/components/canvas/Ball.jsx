@@ -25,13 +25,13 @@ const Ball = (props) => {
           polygonOffsetFactor={-5}
           flatShading
         />
-        {/* <Decal
+        <Decal
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
           flatShading
-        /> */}
+        />
       </mesh>
     </Float>
   );
@@ -45,7 +45,7 @@ const BallCanvas = ({ icon }) => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} enablePan={false}/>
         <Ball imgUrl={icon} />
       </Suspense>
 
