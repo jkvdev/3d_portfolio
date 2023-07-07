@@ -53,27 +53,32 @@ const ComputersCanvas = () => {
     };
   }, []);
 
-  return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      {/* <Suspense fallback={<CanvasLoader />}> */}
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
-      <Computers isMobile={isMobile} />
-      {/* </Suspense> */}
+  try {
+    return (
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
 
-      {/* <Preload all /> */}
-    </Canvas>
-  );
+        <Preload all />
+      </Canvas>
+    );
+  } catch (error) {
+    alert(error);
+    return <h1>Error occurred while rendering...</h1>;
+  }
 };
 
 export default ComputersCanvas;
