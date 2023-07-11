@@ -44,7 +44,7 @@ const Tech = () => {
       </motion.div>
 
       <div className="flex flex-row flex-wrap justify-center gap-10 ">
-        {!isMobile ? (
+        {isMobile ? (
           // If mobile make a marquee with the skills and technologies
           <>
             <TechLogoMarquee isMobile={isMobile} />
