@@ -17,7 +17,7 @@ const Tech = () => {
 
   useEffect(() => {
     // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
     // Set the initial value of the `isMobile` state variable
     setIsMobile(mediaQuery.matches);
@@ -38,7 +38,7 @@ const Tech = () => {
 
   return (
     <>
-      <motion.div variants={textVariant()} className="mb-32">
+      <motion.div variants={textVariant()} className="mb-12">
         <p className={styles.sectionSubText}>What I work with</p>
         <h2 className={styles.sectionHeadText}>Skillset.</h2>
       </motion.div>
