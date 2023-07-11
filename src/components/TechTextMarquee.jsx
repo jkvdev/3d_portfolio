@@ -8,7 +8,7 @@ const TechTextMarquee = ({ isMobile, direction }) => {
         autoFill
         play
         pauseOnHover
-        speed={isMobile ? 10 : 30}
+        speed={isMobile ? 20 : 40}
         direction={direction || "left"}
         className="h-fit -mt-4"
       >
